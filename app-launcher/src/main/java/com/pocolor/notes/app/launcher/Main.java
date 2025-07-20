@@ -8,5 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
         log.info("Starting App Launcher");
+        System.out.println("idk");
     }
 }

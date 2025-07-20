@@ -10,5 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ui-swing</artifactId>
+    <artifactId>shared</artifactId>
+    <packaging>jar</packaging>
+    <name>shared</name>
 </project>
