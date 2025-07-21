@@ -1,7 +1,6 @@
 module com.pocolor.notes.app.ui {
     requires javafx.fxml;
     requires javafx.controls;
-    requires javafx.graphics;
 
     requires com.pocolor.notes.app.viewmodel;
 
