@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +18,7 @@ import static com.pocolor.notes.gui.startup.recent.RecentController.RECENT_FXML_
 
 public class StartupController implements Initializable {
     public static final String STARTUP_FXML_RESOURCE_PATH = "/fxml/startup/Startup.fxml";
+    private static final Logger log = LoggerFactory.getLogger(StartupController.class);
 
     private StartupViewModel viewModel;
 
@@ -29,7 +32,8 @@ public class StartupController implements Initializable {
             loadTemplateFXML();
             loadRecentFXML();
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
+            System.exit(-1);
         }
     }
 
