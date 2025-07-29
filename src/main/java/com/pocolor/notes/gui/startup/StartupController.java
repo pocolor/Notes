@@ -22,7 +22,7 @@ public class StartupController implements Initializable {
 
     private StartupViewModel viewModel;
 
-    @FXML private VBox vBox;
+    @FXML private VBox vBoxContainer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -39,11 +39,11 @@ public class StartupController implements Initializable {
 
     private void loadTemplateFXML() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(TEMPLATE_FXML_RESOURCE_PATH));
-        this.vBox.getChildren().add(loader.load());
+        this.vBoxContainer.getChildren().add(loader.load());
     }
 
     private void loadRecentFXML() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(RECENT_FXML_RESOURCE_PATH));
-        this.vBox.getChildren().add(loader.load());
+        this.vBoxContainer.getChildren().add(loader.load());
     }
 }
