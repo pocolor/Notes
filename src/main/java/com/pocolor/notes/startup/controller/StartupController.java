@@ -1,7 +1,7 @@
-package com.pocolor.notes.gui.startup;
+package com.pocolor.notes.startup.controller;
 
-import com.pocolor.notes.gui.viewmodel.startup.StartupViewModel;
-import com.pocolor.notes.gui.viewmodel.startup.StartupViewModelFactory;
+import com.pocolor.notes.startup.viewmodel.StartupViewModel;
+import com.pocolor.notes.startup.viewmodel.ViewModelFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.pocolor.notes.gui.startup.template.TemplateController.TEMPLATE_FXML_RESOURCE_PATH;
-import static com.pocolor.notes.gui.startup.recent.RecentController.RECENT_FXML_RESOURCE_PATH;
+import static com.pocolor.notes.startup.controller.template.TemplateController.TEMPLATE_FXML_RESOURCE_PATH;
+import static com.pocolor.notes.startup.controller.recent.RecentController.RECENT_FXML_RESOURCE_PATH;
 
 public class StartupController implements Initializable {
     public static final String STARTUP_FXML_RESOURCE_PATH = "/fxml/startup/Startup.fxml";
@@ -26,7 +26,7 @@ public class StartupController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.viewModel = StartupViewModelFactory.getInstance().getStartupViewModel();
+        this.viewModel = ViewModelFactory.getInstance().getStartupViewModel();
 
         try {
             loadTemplateFXML();

@@ -1,11 +1,11 @@
-package com.pocolor.notes.gui.viewmodel.startup;
+package com.pocolor.notes.startup.viewmodel;
 
-public class StartupViewModelFactory {
+public class ViewModelFactory {
     private static class InstanceHolder {
-        private static final StartupViewModelFactory INSTANCE = new StartupViewModelFactory();
+        private static final ViewModelFactory INSTANCE = new ViewModelFactory();
     }
 
-    public static StartupViewModelFactory getInstance() {
+    public static ViewModelFactory getInstance() {
         return InstanceHolder.INSTANCE;
     }
 
@@ -14,7 +14,7 @@ public class StartupViewModelFactory {
     private final TemplateViewModel templateViewModel;
     private final RecentViewModel recentViewModel;
 
-    private StartupViewModelFactory() {
+    private ViewModelFactory() {
         this.startupViewModel = new StartupViewModel();
         this.topBarViewModel = new TopBarViewModel();
         this.templateViewModel = new TemplateViewModel();
