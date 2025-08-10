@@ -2,10 +2,10 @@
 
 <configuration>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>./src/main/resources/logs/notes.log</file>
+        <file>${LOGS_DIR}/app.log</file>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>./src/main/resources/logs/notes.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOGS_DIR}.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
 

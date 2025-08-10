@@ -1,8 +1,14 @@
 package com.pocolor.notes;
 
+import com.pocolor.notes.appdirs.PlatformSpecificAppDirs;
+import com.pocolor.notes.gui.startup.StartupFrame;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        App.launch(App.class, args);
+        System.setProperty("LOGS_DIR", new PlatformSpecificAppDirs().getLogsDir().toString());
+
+        SwingUtilities.invokeLater(StartupFrame::new);
     }
 }
