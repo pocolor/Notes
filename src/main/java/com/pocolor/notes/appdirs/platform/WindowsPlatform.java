@@ -7,9 +7,9 @@ public class WindowsPlatform extends Platform {
         Path local = envOrDefault("LOCALAPPDATA", System.getProperty("user.home") + "\\AppData\\Local");
         Path roaming = envOrDefault("APPDATA", System.getProperty("user.home") + "\\AppData\\Roaming");
 
-        this.cacheDir = local.resolve(APP_NAME).resolve("Cache");
+        this.cacheDir = local.resolve(APP_DEV_NAME).resolve("Cache");
         this.configDir = roaming;
         this.dataDir = local;
-        this.logsDir = local.resolve(APP_NAME).resolve("Logs");
+        this.logsDir = local.resolve(APP_DEV_NAME).resolve("Logs");
     }
 }

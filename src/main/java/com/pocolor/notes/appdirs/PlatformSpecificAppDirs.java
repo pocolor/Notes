@@ -1,10 +1,14 @@
 package com.pocolor.notes.appdirs;
 
 import com.pocolor.notes.appdirs.platform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class PlatformSpecificAppDirs implements AppDirs {
+    private static final Logger log = LoggerFactory.getLogger(PlatformSpecificAppDirs.class);
     private final Platform platform;
 
     public PlatformSpecificAppDirs() {
@@ -24,6 +28,12 @@ public class PlatformSpecificAppDirs implements AppDirs {
 
         } else {
             this.platform = new DefaultLocation();
+        }
+
+        try {
+            this.platform.createDirs();
+        } catch (IOException e) {
+            log.error("Failed to create platform directories.", e);
         }
     }
 

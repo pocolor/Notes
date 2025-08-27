@@ -15,7 +15,7 @@ public class MainContent extends JScrollPane {
         this.contentPane.setLayout(new BoxLayout(this.contentPane, BoxLayout.Y_AXIS));
         this.contentPane.setBorder(BorderFactory.createEmptyBorder());
         this.contentPane.setOpaque(true);
-        this.contentPane.setBackground(Color.cyan);  // TMP
+        this.contentPane.setBackground(Color.cyan);
 
         this.setViewportView(this.contentPane);
     }

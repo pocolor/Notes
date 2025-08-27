@@ -1,6 +1,6 @@
 package com.pocolor.notes.gui.startup.views.sidebar;
 
-import com.pocolor.notes.utils.ImageIcons;
+import com.pocolor.notes.utils.ImageIconUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,24 +14,27 @@ public class ActionButton extends JPanel {
         this.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.setMaximumSize(new Dimension(200, 50));
 
-        this.add(new JLabel(ImageIcons.scaleHeight(icon, 40)));
+        this.add(new JLabel(ImageIconUtils.scaleHeight(icon, 40)));
         this.add(Box.createHorizontalStrut(10));
         this.add(new JLabel(text));
 
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
                 onClick.run();
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                ActionButton.this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                super.mouseEntered(e);
+                ActionButton.this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                ActionButton.this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                super.mouseExited(e);
+                ActionButton.this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
             }
         });
     }

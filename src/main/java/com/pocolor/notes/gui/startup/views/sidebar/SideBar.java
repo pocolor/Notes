@@ -6,7 +6,7 @@ import java.awt.*;
 public class SideBar extends JPanel {
     public SideBar() {
         this.setPreferredSize(new Dimension(200, 0));
-        this.setBackground(Color.BLUE);  // TMP
+        this.setBackground(Color.BLUE);
         this.setLayout(new BorderLayout());
 
         this.add(new ActionList(), BorderLayout.CENTER);
