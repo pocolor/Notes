@@ -6,6 +6,12 @@ import java.awt.*;
 import java.io.File;
 import java.util.Optional;
 
+/**
+ * Utility class for creating common dialog boxes used throughout the application.
+ *
+ * <p>This class provides static methods for creating dialog boxes like
+ * file choosers, confirmation dialogs, and information messages.</p>
+ */
 public final class Dialogs {
     private Dialogs() throws Exception { throw new Exception("no instances of this class"); }
 

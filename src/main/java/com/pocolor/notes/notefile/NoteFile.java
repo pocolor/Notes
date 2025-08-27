@@ -14,6 +14,25 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+/**
+ * Represents a complete note file with its header, content objects, and metadata.
+ *
+ * <p><b>File Structure:</b></p>
+ * <ul>
+ *   <li><b>Note Mark:</b> 4-byte signature "NOTE" identifying the file type</li>
+ *   <li><b>Header:</b> Document version and offset information</li>
+ *   <li><b>Master XRef Header:</b> Metadata for the cross-reference table</li>
+ *   <li><b>Objects:</b> Variable-length content objects (Text, etc.)</li>
+ *   <li><b>Master XRef:</b> Cross-reference table for object locations</li>
+ *   <li><b>Trailer:</b> Dependency information and metadata</li>
+ * </ul>
+ *
+ * <p><b>Supported Object Types:</b></p>
+ * <ul>
+ *   <li>{@link Text} - Text content objects</li>
+ *   <li>{@link XRef} - Cross-reference tables</li>
+ * </ul>
+ */
 public class NoteFile {
     private static final HashMap<String, Class<? extends NFObject>> OBJECTS = new HashMap<>();
 

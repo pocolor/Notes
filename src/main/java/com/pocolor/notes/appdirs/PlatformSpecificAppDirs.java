@@ -7,6 +7,22 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Path;
 
+/**
+ * Platform-specific implementation of {@link AppDirs} that automatically
+ * detects the operating system and creates appropriate directory structures.
+ *
+ * <p>This class supports the following platforms:</p>
+ * <ul>
+ *   <li><b>Windows:</b> Uses LOCALAPPDATA and APPDATA environment variables</li>
+ *   <li><b>Linux/Unix:</b> Follows XDG Base Directory specification or falls back to ~/.local/share</li>
+ *   <li><b>macOS:</b> Uses standard macOS application directories</li>
+ *   <li><b>Other:</b> Creates directories in the current working directory</li>
+ * </ul>
+ *
+ * <p>All directories are automatically created during initialization if they don't exist.</p>
+ *
+ * @see AppDirs
+ */
 public class PlatformSpecificAppDirs implements AppDirs {
     private static final Logger log = LoggerFactory.getLogger(PlatformSpecificAppDirs.class);
     private final Platform platform;
